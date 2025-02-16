@@ -1,12 +1,15 @@
 package org.example.filteringutility;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Options {
     private String outputDir;
     private String prefix;
     private boolean append;
     private boolean fullStats;
     private boolean shortStats;
-    private String inputFile;
+    private List<String> inputFiles;
 
     public Options() {
         this.outputDir = ".";
@@ -14,15 +17,15 @@ public class Options {
         this.append = false;
         this.fullStats = false;
         this.shortStats = true;
-        this.inputFile = ""; // по умолчанию пусто
+        this.inputFiles = new ArrayList<>();
     }
 
-    public String getInputFile() {
-        return inputFile;
+    public List<String> getInputFiles() {
+        return inputFiles;
     }
 
-    public void setInputFile(String inputFile) {
-        this.inputFile = inputFile;
+    public void setInputFiles(List<String> inputFiles) {
+        this.inputFiles = inputFiles;
     }
 
     public String getOutputDir() {

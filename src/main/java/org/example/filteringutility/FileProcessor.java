@@ -11,16 +11,18 @@ public class FileProcessor {
 
     public void processFiles() {
         StatisticsCollector statsCollector = new StatisticsCollector(options.isFullStats());
-
         DataProcessor dataProcessor = new DataProcessor(statsCollector);
 
-        List<String> lines = FileUtils.readLines(options.getInputFile());
+        for (String inputFile : options.getInputFiles()) {
+            List<String> lines = FileUtils.readLines(inputFile);
 
-        for (String line : lines) {
-            dataProcessor.processLine(line);
+            for (String line : lines) {
+                dataProcessor.processLine(line);
+            }
+            dataProcessor.writeToFiles(options);
+            statsCollector.printStatistics();
         }
-        dataProcessor.writeToFiles(options);
-        statsCollector.printStatistics();
     }
 }
+
 

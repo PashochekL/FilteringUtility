@@ -1,11 +1,8 @@
 package org.example.filteringutility;
 
-import java.util.Arrays;
-
 public class CommandLineParser {
     public Options parse(String[] args) {
         Options options = new Options();
-        boolean fileProvided = false;
 
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
@@ -37,16 +34,10 @@ public class CommandLineParser {
                     options.setShortStats(false);
                     break;
                 default:
-                    if (!fileProvided) {
-                        options.setInputFile(args[i]);
-                        fileProvided = true;
-                    } else {
-                        System.err.println("Неизвестный аргумент: " + args[i]);
-                    }
+                    options.getInputFiles().add(args[i]);
                     break;
             }
         }
         return options;
     }
 }
-
