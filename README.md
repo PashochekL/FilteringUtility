@@ -76,11 +76,11 @@ java -jar target/file-content-filter-1.0-SNAPSHOT.jar <путь_к_файлу1> 
 Пример команды:
 
 ```bash
-java -jar target/file-content-filter-1.0-SNAPSHOT.jar input.txt -o out/ -p result_ -f
+java -jar target/file-content-filter-1.0-SNAPSHOT.jar input.txt jija.txt -o out/ -p result_ -f
 ```
 
 В этом примере:
-- Мы указываем файл `input.txt` для обработки.
+- Мы указываем файлы `input.txt` и `jija.txt` для обработки.
 - Результаты будут записаны в каталог `out/`.
 - Имя выходных файлов будет начинаться с `result_` (например, `result_integers.txt`).
 - Будет выведена полная статистика о результатах.
