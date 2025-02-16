@@ -3,6 +3,7 @@ package org.example.filteringutility;
 public class CommandLineParser {
     public Options parse(String[] args) {
         Options options = new Options();
+        boolean fileProvided = false;
 
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
